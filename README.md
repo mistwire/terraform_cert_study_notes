@@ -1,0 +1,1 @@
+# terraform_cert_study_notes
