@@ -11,10 +11,13 @@ How to quickly spin up an AWS EC2 instance in your brand new AWS Free Tier accou
 */
 
 provider "aws" {
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
-resource "aws_instance" "dev-ec2" {
-    ami = "ami-06ca3ca175f37dd66"
-    instance_type = "t2.micro"
+resource "aws_instance" "My1stServer" {
+  ami           = "ami-06ca3ca175f37dd66"
+  instance_type = "t2.micro"
+  name          = "My 1st Webserver"
 }
+
+
