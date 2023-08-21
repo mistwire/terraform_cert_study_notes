@@ -10,14 +10,25 @@ How to quickly spin up an AWS EC2 instance in your brand new AWS Free Tier accou
 8. That's it! Congratulations!!!
 */
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.13.1"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "My1stServer" {
+resource "aws_instance" "WebServer" {
   ami           = "ami-06ca3ca175f37dd66"
   instance_type = "t2.micro"
-  name          = "My 1st Webserver"
+  tags = {
+    Name = "My 1st webserver"
+  }
 }
 
 
